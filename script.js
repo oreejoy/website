@@ -27,6 +27,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const siteNav = document.getElementById('siteNav');
   const mobileNavOverlay = document.getElementById('mobileNavOverlay');
 
+  const techVideo = document.getElementById('techVideo');
+  const videoPlayPause = document.getElementById('videoPlayPause');
+  const videoSeek = document.getElementById('videoSeek');
+
+  if (techVideo && videoPlayPause && videoSeek) {
+    videoPlayPause.textContent = '▶';
+
+    const updateSeek = () => {
+      const progress = techVideo.duration ? (techVideo.currentTime / techVideo.duration) * 100 : 0;
+      videoSeek.value = progress;
+    };
+
+    videoPlayPause.addEventListener('click', () => {
+      if (techVideo.paused) {
+        techVideo.play();
+        videoPlayPause.textContent = '⏸';
+      } else {
+        techVideo.pause();
+        videoPlayPause.textContent = '▶';
+      }
+    });
+
+    videoSeek.addEventListener('input', () => {
+      if (!techVideo.duration) return;
+      const time = (videoSeek.value / 100) * techVideo.duration;
+      techVideo.currentTime = time;
+    });
+
+    techVideo.addEventListener('timeupdate', updateSeek);
+    techVideo.addEventListener('loadedmetadata', updateSeek);
+    techVideo.addEventListener('ended', () => {
+      videoPlayPause.textContent = '▶';
+    });
+  }
+
   function closeMobileNav() {
     if (!mobileMenuBtn || !siteNav || !mobileNavOverlay) return;
     mobileMenuBtn.setAttribute('aria-expanded', 'false');
