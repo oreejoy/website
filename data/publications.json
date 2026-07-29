@@ -1,0 +1,16 @@
+[
+  {
+    "id": "pub-1",
+    "title": "National Innovation Award",
+    "tag": "Recognition",
+    "img": "assets/publications/pub_1.jpeg",
+    "desc": "Oreejoy received widespread recognition for breakthrough gait intelligence technology..."
+  },
+  {
+    "id": "pub-2",
+    "title": "Force Plate Clinical Validation",
+    "tag": "Research & Lab",
+    "img": "assets/publications/pub_2.png",
+    "desc": "Experimental trial comparing Instrole's embedded pressure matrix against laboratory-grade clinical force plates..."
+  }
+]

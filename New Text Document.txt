@@ -1,0 +1,21 @@
+oreejoy-project/
+├── assets/
+│   ├── logo.png
+│   ├── founders/              <-- Isolated Leadership Assets
+│   │   ├── founder_1.jpeg     (Prof. Uttama Lahiri image)
+│   │   └── founder_2.jpeg     (Dr. Neelesh Sharma image)
+│   ├── hero/                  <-- Isolated Carousel Assets
+│   │   ├── slide_1.png
+│   │   └── slide_2.png
+│   └── publications/          <-- Isolated Research Assets
+│       ├── pub_1.jpeg
+│       └── pub_2.png
+├── components/                <-- HTML Templates Folder
+│   ├── photo-card.html        <-- Blueprint for Hero slides
+│   └── gallery-card.html      <-- Blueprint for Research cards
+├── data/
+│   ├── hero-rotator.json
+│   └── publications.json
+├── index.html
+├── styles.css
+└── script.js

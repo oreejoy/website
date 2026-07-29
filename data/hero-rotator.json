@@ -1,0 +1,16 @@
+[
+  {
+    "id": "hero-1",
+    "title": "Instrole Platform Overview",
+    "tag": "Technology",
+    "img": "assets/hero/slide_1.png",
+    "desc": "Complete wearable gait diagnostics platform with foot pressure insoles and mobile analytical dashboard."
+  },
+  {
+    "id": "hero-2",
+    "title": "Oreejoy Team & Research Lab",
+    "tag": "Team & Innovation",
+    "img": "assets/hero/slide_2.png",
+    "desc": "The research team at Intelligent Human-Computer Interaction Lab working on bio-sensing technology."
+  }
+]
