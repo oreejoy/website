@@ -91,11 +91,23 @@ body {
 /* Mobile Toggle Button */
 .mobile-toggle {
   display: none;
-  background: transparent;
-  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
   padding: 8px;
   cursor: pointer;
   color: var(--text-dark);
+  box-shadow: var(--shadow-soft);
+}
+
+.mobile-toggle svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
 }
 
 /* Mobile nav overlay that dims the page when nav is open */
@@ -954,5 +966,5 @@ body {
 }
 
 @media (max-width: 900px) {
-  .mobile-toggle { display: block; }
+  .mobile-toggle { display: flex; }
 }
