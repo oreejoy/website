@@ -1,19 +1,5 @@
 [
   {
-    "id": "hero-1",
-    "title": "Instrole Platform Overview",
-    "tag": "Technology",
-    "img": "assets/hero/slide_1.png",
-    "desc": "Complete wearable gait diagnostics platform with foot pressure insoles and mobile analytical dashboard."
-  },
-  {
-    "id": "hero-2",
-    "title": "Oreejoy Team & Research Lab",
-    "tag": "Team & Innovation",
-    "img": "assets/hero/slide_2.png",
-    "desc": "The research team at Intelligent Human-Computer Interaction Lab working on bio-sensing technology."
-  },
-  {
     "id": "hero-1785314275",
     "title": "Instrole Lacing Pod Attachment",
     "tag": "#Instrole #OreeJoy #SmartWearable #LaceClip #GaitAnalysis",
@@ -62,25 +48,5 @@
     "img": "assets/hero/slide_1785314642.png",
     "desc": "A hands-on view showing the top black textile finish of the flexible Instrole insert along with its protective cable sleeve, highlighting the quality packaging and durable material layering."
   },
-  {
-    "id": "hero-1785315536",
-    "title": "Showcasing Instrole to Dr. L.N. Dorairajan, Director of AIIMS Rajkot",
-    "tag": "#AIIMS #AIIMSRajkot #Instrole #Oreejoy #IITGN #IRACSLab #WearableTech #GaitAnalysis #MedTech #HealthcareInnovation",
-    "img": "assets/hero/slide_1785315536.png",
-    "desc": "An Oreejoy representative presents Instrole—an instrumented smart insole system developed in collaboration with IIT Gandhinagar—to Dr. L.N. Dorairajan, Director of AIIMS Rajkot, at the IRACS Lab. The session highlights accessible, affordable gait assessment and objective mobility monitoring for clinical and neurological care."
-  },
-  {
-    "id": "hero-1785315603",
-    "title": "Healthcare Technologies Meeting with Clinical Educators",
-    "tag": "#RehabTech #Physiotherapy #MedTech #Oreejoy #IITGandhinagar #GaitAnalysis #StrokeRehabilitation #WearableTech #ClinicalCollaboration #HealthcareInnovation #Gujarat",
-    "img": "assets/hero/slide_1785315603.png",
-    "desc": "Oreejoy MedTech hosts distinguished physiotherapy educators and clinicians from Marwadi University, Shree KK Sheth Physiotherapy College (Rajkot), Shree Aryatej Institute of Physiotherapy (Morbi), and IIPHG at IIT Gandhinagar. The presentation details PTreadX gait rehabilitation solutions and energy expenditure analysis to bridge academic research with real-world clinical workflows."
-  },
-  {
-    "id": "hero-1785315676",
-    "title": "Prof. Uttama Lahiri at Boeing BUILD 5.0",
-    "tag": "#BoeingBUILD #BoeingBUILD5 #INSTROLE #OreejoyMedtech #IITGandhinagar #GaitAnalysis #FootImprints #DiabeticFoot #Parkinsons #WearableTech",
-    "img": "assets/hero/slide_1785315676.png",
-    "desc": "Prof. Uttama Lahiri presents the underlying science behind INSTROLE during the Boeing BUILD 5.0 event at IIT Gandhinagar. The talk demonstrates how foot imprints reveal critical biometric profiles—including healthy, flat-foot, pre-fall, Parkinsonian, and diabetic foot pressure signatures—enabling early detection of foot and gait disorders in affordable clinical settings."
-  }
+
 ]
