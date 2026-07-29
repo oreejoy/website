@@ -45,15 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mobileMenuBtn && siteNav && mobileNavOverlay) {
     mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
       if (expanded) closeMobileNav(); else openMobileNav();
     });
 
-    mobileNavOverlay.addEventListener('click', () => closeMobileNav());
+    document.addEventListener('click', (e) => {
+      if (!siteNav.classList.contains('mobile-open')) return;
+      if (siteNav.contains(e.target) || mobileMenuBtn.contains(e.target)) return;
+      closeMobileNav();
+    });
 
     // Close mobile nav when a navigation link is clicked
     siteNav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => closeMobileNav());
+      a.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeMobileNav();
+      });
     });
   }
 

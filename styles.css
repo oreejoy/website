@@ -121,7 +121,7 @@ body {
   inset: 0;
   background: rgba(15, 23, 42, 0.45);
   z-index: 1400;
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 /* Mobile nav open state */
