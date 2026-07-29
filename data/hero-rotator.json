@@ -12,5 +12,19 @@
     "tag": "Team & Innovation",
     "img": "assets/hero/slide_2.png",
     "desc": "The research team at Intelligent Human-Computer Interaction Lab working on bio-sensing technology."
+  },
+  {
+    "id": "hero-1785314275",
+    "title": "Instrole Lacing Pod Attachment",
+    "tag": "#Instrole #OreeJoy #SmartWearable #LaceClip #GaitAnalysis",
+    "img": "assets/hero/slide_1785314275.png",
+    "desc": "A single blue running shoe fitted with the sleek, white and peach-toned Instrole electronic pod clipped securely over the laces. Designed for seamless tracking, this pod captures real-time motion and pressure data without interfering with natural running form."
+  },
+  {
+    "id": "hero-1785314314",
+    "title": "Dual Instrole Pod Setup",
+    "tag": "#Instrole #OreeJoy #WearableTech #SportsAnalytics #DualTracking",
+    "img": "assets/hero/slide_1785314314.png",
+    "desc": "A pair of blue athletic shoes featuring synchronized Instrole lace pods. Positioned front and center on each shoe, these compact sensor modules monitor biomechanical metrics during workouts and gait assessments."
   }
 ]

@@ -1,0 +1,18 @@
+# Local admin tooling
+admin.py
+asset_manager.py
+requirements.txt
+ADMIN_README.md
+setup_git.ps1
+static/
+templates/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# OS files
+.DS_Store
+Thumbs.db
