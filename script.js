@@ -67,20 +67,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- DYNAMIC DUAL ENGINE COMPONENT ADDER ---
 
+  function replaceAllTemplates(template, key, value) {
+    return template.split(key).join(value);
+  }
+
   // 1. Fetch & Initialize Hero Rotator Media Snippets
   Promise.all([
-    fetch('components/photo-card.html').then(res => res.text()),
-    fetch('data/hero-rotator.json').then(res => res.json())
+    fetch('components/photo-card.html?v=2').then(res => res.text()),
+    fetch('data/hero-rotator.json?v=2').then(res => res.json())
   ]).then(([template, data]) => {
     const container = document.getElementById('heroContainer');
     const dotsContainer = document.getElementById('rotatorDots');
     if (!container) return;
 
     data.forEach((item, index) => {
-      let cardHtml = template
-        .replace('{{img}}', item.img)
-        .replace('{{title}}', item.title)
-        .replace('{{index}}', index);
+      let cardHtml = replaceAllTemplates(template, '{{img}}', item.img);
+      cardHtml = replaceAllTemplates(cardHtml, '{{title}}', item.title);
+      cardHtml = replaceAllTemplates(cardHtml, '{{index}}', String(index));
 
       const parser = new DOMParser();
       const doc = parser.parseFromString(cardHtml, 'text/html');
@@ -111,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Fetch & Initialize Research Gallery Cards
   Promise.all([
-    fetch('components/gallery-card.html').then(res => res.text()),
-    fetch('data/publications.json').then(res => res.json())
+    fetch('components/gallery-card.html?v=2').then(res => res.text()),
+    fetch('data/publications.json?v=2').then(res => res.json())
   ]).then(([template, data]) => {
     const container = document.getElementById('galleryContainer');
     if (!container) return;
@@ -120,10 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
     data.forEach(item => {
       const shortDesc = item.desc.length > 85 ? item.desc.substring(0, 85) + '...' : item.desc;
 
-      let cardHtml = template
-        .replace('{{img}}', item.img)
-        .replace('{{title}}', item.title)
-        .replace('{{desc}}', shortDesc);
+      let cardHtml = replaceAllTemplates(template, '{{img}}', item.img);
+      cardHtml = replaceAllTemplates(cardHtml, '{{title}}', item.title);
+      cardHtml = replaceAllTemplates(cardHtml, '{{desc}}', shortDesc);
 
       const parser = new DOMParser();
       const doc = parser.parseFromString(cardHtml, 'text/html');
