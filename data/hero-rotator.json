@@ -26,5 +26,40 @@
     "tag": "#Instrole #OreeJoy #WearableTech #SportsAnalytics #DualTracking",
     "img": "assets/hero/slide_1785314314.png",
     "desc": "A pair of blue athletic shoes featuring synchronized Instrole lace pods. Positioned front and center on each shoe, these compact sensor modules monitor biomechanical metrics during workouts and gait assessments."
+  },
+  {
+    "id": "hero-1785314535",
+    "title": "Instrole Heel Clip Module",
+    "tag": "#Instrole #OreeJoy #HeelSensor #Biomechanics #SmartFootwear",
+    "img": "assets/hero/slide_1785314535.jpeg",
+    "desc": "A studio view of athletic shoes equipped with blue Instrole heel-mounted electronics modules. This ergonomic placement ensures a firm, non-slip attachment to measure heel strike dynamics and footwear movement accurately."
+  },
+  {
+    "id": "hero-1785314565",
+    "title": "Instrole Sensor Insole & Heel Clip Display",
+    "tag": "#Instrole #OreeJoy #PressureInsole #GaitLab #HardwareKit",
+    "img": "assets/hero/slide_1785314565.jpg",
+    "desc": "A clear breakdown showing an Instrole smart sensor insole alongside a running shoe fitted with the heel-clip module. The transparent base panel highlights how the flexible pressure insert pairs with the main tracking unit."
+  },
+  {
+    "id": "hero-1785314585",
+    "title": "Flexible Pressure Sensor Matrix Layer",
+    "tag": "#Instrole #OreeJoy #FlexibleElectronics #PressureMapping #SensorInsole",
+    "img": "assets/hero/slide_1785314585.png",
+    "desc": "A close-up view of the underside of the flexible sensor insole, revealing the ribbon connector extending from the soft base. This integrated wiring safely feeds high-density pressure data from the footbed to the processing pod."
+  },
+  {
+    "id": "hero-1785314616",
+    "title": "Ergonomic Cushioning Layer",
+    "tag": "#Instrole #OreeJoy #ComfortInsole #ErgonomicDesign #SmartInsole",
+    "img": "assets/hero/slide_1785314616.png",
+    "desc": "Demonstrating the dual-layer construction of the Instrole flexible insert, featuring a soft blue foam surface designed for user comfort and impact absorption during dynamic activities."
+  },
+  {
+    "id": "hero-1785314642",
+    "title": "Instrole Flexible Insole Assembly",
+    "tag": "#Instrole #OreeJoy #InsolePacking #HardwareManufacturing #FootwearTech",
+    "img": "assets/hero/slide_1785314642.png",
+    "desc": "A hands-on view showing the top black textile finish of the flexible Instrole insert along with its protective cable sleeve, highlighting the quality packaging and durable material layering."
   }
 ]
