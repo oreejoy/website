@@ -113,6 +113,7 @@ body {
 /* Mobile nav overlay that dims the page when nav is open */
 .mobile-nav-overlay {
   display: none;
+  pointer-events: none;
 }
 .mobile-nav-overlay.active {
   display: block;
@@ -120,6 +121,7 @@ body {
   inset: 0;
   background: rgba(15, 23, 42, 0.45);
   z-index: 1400;
+  pointer-events: auto;
 }
 
 /* Mobile nav open state */
@@ -135,13 +137,16 @@ body {
   padding: 2.5rem 1.5rem;
   gap: 1rem;
   box-shadow: 0 30px 60px rgba(0,0,0,0.18);
-  z-index: 1500;
+  z-index: 1600;
+  pointer-events: auto;
 }
 
 /* Make nav links large and tappable in mobile open state */
 .site-nav.mobile-open a { 
   font-size: 1.05rem; 
-  padding: 0.6rem 0; 
+  padding: 0.75rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* Buttons */
