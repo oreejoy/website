@@ -47,33 +47,70 @@ document.addEventListener('DOMContentLoaded', () => {
   const videoSeek = document.getElementById('videoSeek');
 
   if (techVideo && videoPlayPause && videoSeek) {
+    techVideo.load();
     videoPlayPause.textContent = '▶';
 
     const updateSeek = () => {
-      const progress = techVideo.duration ? (techVideo.currentTime / techVideo.duration) * 100 : 0;
-      videoSeek.value = progress;
+      if (!Number.isNaN(techVideo.duration) && techVideo.duration > 0) {
+        videoSeek.value = (techVideo.currentTime / techVideo.duration) * 100;
+      }
     };
 
-    videoPlayPause.addEventListener('click', () => {
-      if (techVideo.paused) {
-        techVideo.play();
-        videoPlayPause.textContent = '⏸';
-      } else {
-        techVideo.pause();
-        videoPlayPause.textContent = '▶';
+    videoPlayPause.addEventListener('click', async () => {
+      try {
+        if (techVideo.paused) {
+          await techVideo.play();
+        } else {
+          techVideo.pause();
+        }
+      } catch (err) {
+        console.error('Video play failed:', err);
       }
     });
 
-    videoSeek.addEventListener('input', () => {
-      if (!techVideo.duration) return;
-      const time = (videoSeek.value / 100) * techVideo.duration;
-      techVideo.currentTime = time;
+    techVideo.addEventListener('play', () => {
+      videoPlayPause.textContent = '⏸';
+    });
+
+    techVideo.addEventListener('pause', () => {
+      videoPlayPause.textContent = '▶';
+    });
+
+    techVideo.addEventListener('ended', () => {
+      videoPlayPause.textContent = '▶';
+      videoSeek.value = 0;
     });
 
     techVideo.addEventListener('timeupdate', updateSeek);
-    techVideo.addEventListener('loadedmetadata', updateSeek);
-    techVideo.addEventListener('ended', () => {
-      videoPlayPause.textContent = '▶';
+    techVideo.addEventListener('loadedmetadata', () => {
+      videoSeek.max = 100;
+      updateSeek();
+    });
+
+    videoSeek.addEventListener('input', () => {
+      if (!Number.isNaN(techVideo.duration)) {
+        techVideo.currentTime = (videoSeek.value / 100) * techVideo.duration;
+      }
+    });
+
+    techVideo.addEventListener('click', async () => {
+      try {
+        if (techVideo.paused) {
+          await techVideo.play();
+        } else {
+          techVideo.pause();
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    });
+
+    techVideo.addEventListener('loadeddata', () => {
+      console.log('Video loaded');
+    });
+
+    techVideo.addEventListener('error', () => {
+      console.error('Video error:', techVideo.error);
     });
   }
 
