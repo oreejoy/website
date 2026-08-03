@@ -6,12 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalTitle = document.getElementById('modalTitle');
   const modalTag = document.getElementById('modalTag');
   const modalDesc = document.getElementById('modalDesc');
+  const modalVisualWrapper = document.getElementById('modalVisualWrapper');
+  const modalAbstractWrapper = document.getElementById('modalAbstractWrapper');
+  const modalAbstract = document.getElementById('modalAbstract');
 
-  const openModal = (title, tag, img, desc) => {
+  const openModal = (title, tag, img, desc, abstract) => {
     modalTitle.textContent = title;
     modalTag.textContent = tag;
-    modalImg.src = img;
     modalDesc.textContent = desc;
+
+    if (abstract) {
+      modalImg.hidden = true;
+      modalVisualWrapper.classList.add('abstract-mode');
+      modalAbstractWrapper.hidden = false;
+      modalAbstract.textContent = abstract;
+    } else {
+      modalImg.hidden = false;
+      modalVisualWrapper.classList.remove('abstract-mode');
+      modalAbstractWrapper.hidden = true;
+      modalImg.src = img;
+    }
+
     modalOverlay.classList.add('active');
   };
 
@@ -116,8 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 1. Fetch & Initialize Hero Rotator Media Snippets
   Promise.all([
-    fetch('components/photo-card.html?v=2').then(res => res.text()),
-    fetch('data/hero-rotator.json?v=2').then(res => res.json())
+    fetch('components/photo-card.html?v=3').then(res => res.text()),
+    fetch('data/hero-rotator.json?v=3').then(res => res.json())
   ]).then(([template, data]) => {
     const container = document.getElementById('heroContainer');
     const dotsContainer = document.getElementById('rotatorDots');
@@ -157,25 +172,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Fetch & Initialize Research Gallery Cards
   Promise.all([
-    fetch('components/gallery-card.html?v=2').then(res => res.text()),
-    fetch('data/publications.json?v=2').then(res => res.json())
+    fetch('components/gallery-card.html?v=3').then(res => res.text()),
+    fetch('data/publications.json?v=3').then(res => res.json())
   ]).then(([template, data]) => {
     const container = document.getElementById('galleryContainer');
     if (!container) return;
 
     data.forEach(item => {
       const shortDesc = item.desc.length > 85 ? item.desc.substring(0, 85) + '...' : item.desc;
+      const detailsMarkup = item.source
+        ? `<a href="${item.source}" class="gallery-source-link" target="_blank" rel="noopener noreferrer">Open source paper ↗</a>`
+        : `<p>${shortDesc}</p>`;
 
       let cardHtml = replaceAllTemplates(template, '{{img}}', item.img);
       cardHtml = replaceAllTemplates(cardHtml, '{{title}}', item.title);
-      cardHtml = replaceAllTemplates(cardHtml, '{{desc}}', shortDesc);
+      cardHtml = replaceAllTemplates(cardHtml, '{{details}}', detailsMarkup);
 
       const parser = new DOMParser();
       const doc = parser.parseFromString(cardHtml, 'text/html');
       const cardElement = doc.body.firstChild;
+      const sourceLink = cardElement.querySelector('.gallery-source-link');
+
+      if (sourceLink) {
+        sourceLink.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+      }
 
       cardElement.addEventListener('click', () => {
-        openModal(item.title, item.tag, item.img, item.desc);
+        openModal(item.title, item.tag, item.img, item.desc, item.abstract);
       });
 
       container.appendChild(cardElement);
